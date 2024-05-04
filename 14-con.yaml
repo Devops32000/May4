@@ -22,3 +22,14 @@
   - name: convert to upper case
     ansible.builtin.debug:
       msg: "{{ greetings | lower }}"
+
+- name: Demo on loops
+  hosts: localhost
+  tasks:
+  - name: print names
+    ansible.buitin.debug:
+      msg: "Hello {{ item }}"
+    loops:
+    - linux
+    - shell
+    - ansible
